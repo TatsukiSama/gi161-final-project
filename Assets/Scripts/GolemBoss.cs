@@ -1,16 +1,15 @@
 using UnityEngine;
-
-public class GolemBoss. : MonoBehaviour
+public class GolemBoss : Monster
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void TakeTurn(Character target)
     {
-        
+        Debug.Log($"{charName} ทุบแรง!");
+        target.TakeDamage(attack + 5);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void TakeDamage(int dmg)
     {
-        
+        Debug.Log($"{charName} เกราะหิน ลดดาเมจครึ่งหนึ่ง!");
+        base.TakeDamage(dmg / 2);
     }
 }

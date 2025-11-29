@@ -1,16 +1,25 @@
 using UnityEngine;
 
-public class Hero : MonoBehaviour
+public class Hero : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void TakeTurn(Character target)
     {
-        
+        // แบบง่าย: โจมตีปกติไปก่อน
+        Debug.Log($"{charName} โจมตี {target.charName}");
+        target.TakeDamage(attack);
     }
 
-    // Update is called once per frame
-    void Update()
+    // Overloading
+    public void UseSkill(Character target)
     {
-        
+        Debug.Log($"{charName} ใช้สกิล Slash!");
+        target.TakeDamage(attack + 10);
+    }
+
+    public void UseSkill(Character target, float multiplier)
+    {
+        int dmg = Mathf.RoundToInt(attack * multiplier);
+        Debug.Log($"{charName} ใช้สกิล STRIKE x{multiplier}");
+        target.TakeDamage(dmg);
     }
 }

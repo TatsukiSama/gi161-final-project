@@ -1,16 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Image bar;
+    public Character target;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float ratio = (float)target.currentHP / target.maxHP;
+        bar.fillAmount = ratio;
     }
 }
+

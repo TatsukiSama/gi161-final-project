@@ -1,16 +1,31 @@
 using UnityEngine;
 
-public class d : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Stats")]
+    public string charName;
+    public int maxHP = 100;
+    public int currentHP;
+    public int attack = 10;
+    public int defense = 2;
+
+    protected virtual void Start()
     {
-        
+        currentHP = maxHP;
     }
 
-    // Update is called once per frame
-    void Update()
+    public abstract void TakeTurn(Character target);
+
+    public virtual void TakeDamage(int dmg)
     {
-        
+        int finalDamage = Mathf.Max(dmg - defense, 0);
+        currentHP -= finalDamage;
+
+        Debug.Log($"{charName} โดน {finalDamage} ดาเมจ (HP {currentHP}/{maxHP})");
+
+        if (currentHP <= 0)
+        {
+            Debug.Log($"{charName} ตายแล้ว");
+        }
     }
 }

@@ -1,16 +1,20 @@
 using UnityEngine;
-
-public class DragonBoss : MonoBehaviour
+public class DragonBoss : Monster
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    bool charging = false;
 
-    // Update is called once per frame
-    void Update()
+    public override void TakeTurn(Character target)
     {
-        
+        if (!charging)
+        {
+            Debug.Log($"{charName} ชาร์จพลัง!");
+            charging = true;
+        }
+        else
+        {
+            Debug.Log($"{charName} พ่นไฟรุนแรง!");
+            target.TakeDamage(attack + 20);
+            charging = false;
+        }
     }
 }

@@ -1,16 +1,9 @@
 using UnityEngine;
-
-public class SlimeBoss : MonoBehaviour
+public class SlimeBoss : Monster
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void TakeTurn(Character target)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log($"{charName} กระโดดใส่!");
+        target.TakeDamage(attack);
     }
 }

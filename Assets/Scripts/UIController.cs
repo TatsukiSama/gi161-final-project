@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameManager gm;
+
+    public void OnAttack()
     {
-        
+        gm.PlayerTurn_Attack();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnSkill()
     {
-        
+        gm.PlayerTurn_Skill();
+    }
+
+    public void OnGuard()
+    {
+        gm.PlayerTurn_Guard();
     }
 }
+

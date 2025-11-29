@@ -4,12 +4,29 @@ public class Hero : Character
 {
     public override void TakeTurn(Character target)
     {
-        // แบบง่าย: โจมตีปกติไปก่อน
         Debug.Log($"{charName} โจมตี {target.charName}");
         target.TakeDamage(attack);
     }
 
-    // Overloading
+    public void Attack(Character target)
+    {
+        Debug.Log($"{charName} ใช้โจมตีปกติ");
+        target.TakeDamage(attack);
+    }
+
+    public void Guard()
+    {
+        Debug.Log($"{charName} ตั้งการ์ด ลดดาเมจรอบหน้า");
+        defense += 5;
+        Invoke(nameof(ResetDefense), 1f);
+    }
+
+    void ResetDefense()
+    {
+        defense -= 5;
+    }
+
+    // Overloading Skill
     public void UseSkill(Character target)
     {
         Debug.Log($"{charName} ใช้สกิล Slash!");
@@ -23,3 +40,5 @@ public class Hero : Character
         target.TakeDamage(dmg);
     }
 }
+
+

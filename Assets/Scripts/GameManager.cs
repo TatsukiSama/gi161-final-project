@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerTurn_Attack()
     {
-        hero.NormalAttack(monster);
+        hero.Attack(monster);
         AfterPlayerAction();
     }
 

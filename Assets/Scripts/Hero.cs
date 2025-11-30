@@ -25,7 +25,7 @@ public class Hero : Character
     public void Guard()
     {
         Debug.Log($"{charName} ตั้งการ์ด ลดดาเมจรอบหน้า");
-        defense += 10;
+        defense += 15;
         Invoke(nameof(ResetDefense), 1f);
     }
 

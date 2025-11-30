@@ -1770,7 +1770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charName: 
-  maxHP: 200
+  maxHP: 250
   currentHP: 0
   attack: 10
   defense: 5

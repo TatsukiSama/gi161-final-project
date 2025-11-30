@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charName: Golem
-  maxHP: 100
+  maxHP: 80
   currentHP: 0
   attack: 5
   defense: 5

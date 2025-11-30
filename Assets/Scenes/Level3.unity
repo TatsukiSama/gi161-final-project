@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charName: 
-  maxHP: 250
+  maxHP: 150
   currentHP: 0
   attack: 10
   defense: 5
@@ -2999,7 +2999,7 @@ MonoBehaviour:
   attack: 10
   defense: 2
   maxMP: 100
-  currentMP: 0
+  currentMP: 50
   attackPoint: {fileID: 1009107086}
   shieldPoint: {fileID: 1383167498}
   slashEffectPrefab: {fileID: 6810353752473540703, guid: 2a979d0ede4055d45b900b1ec4e42ea9, type: 3}

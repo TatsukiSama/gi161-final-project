@@ -7176,7 +7176,7 @@ MonoBehaviour:
   attack: 10
   defense: 2
   maxMP: 100
-  currentMP: 0
+  currentMP: 50
   attackPoint: {fileID: 41424380}
   shieldPoint: {fileID: 914264797}
   slashEffectPrefab: {fileID: 6810353752473540703, guid: 2a979d0ede4055d45b900b1ec4e42ea9, type: 3}

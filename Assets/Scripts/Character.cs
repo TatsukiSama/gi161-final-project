@@ -11,7 +11,7 @@ public abstract class Character : MonoBehaviour
 
     [Header("Mana")]
     public int maxMP = 100;
-    public int currentMP = 0;
+    public int currentMP = 100;
 
 
     protected virtual void Start()

@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Hero : Character
 {
-    public Transform attackPoint;     
-    public GameObject slashEffectPrefab;  
+    public Transform attackPoint;
+    public GameObject slashEffectPrefab;
+    public GameObject skillEffectPrefab;
 
     public override void TakeTurn(Character target)
     {
@@ -24,7 +25,7 @@ public class Hero : Character
     public void Guard()
     {
         Debug.Log($"{charName} ตั้งการ์ด ลดดาเมจรอบหน้า");
-        defense += 5;
+        defense += 10;
         Invoke(nameof(ResetDefense), 1f);
     }
 
@@ -38,6 +39,8 @@ public class Hero : Character
     {
         Debug.Log($"{charName} ใช้สกิล Slash!");
         target.TakeDamage(attack + 20);
+
+        SpawnSkillEffect();
     }
 
     public void UseSkill(Character target, float multiplier)
@@ -57,6 +60,16 @@ public class Hero : Character
 
             Destroy(fx, 0.15f);
 
+        }
+    }
+
+    public void SpawnSkillEffect()
+    {
+        if (skillEffectPrefab != null && attackPoint != null)
+        {
+            GameObject fx = Instantiate(skillEffectPrefab, attackPoint.position, Quaternion.identity);
+
+            Destroy(fx, 0.4f);
         }
     }
 }

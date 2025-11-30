@@ -7069,6 +7069,7 @@ MonoBehaviour:
   defense: 2
   attackPoint: {fileID: 41424380}
   slashEffectPrefab: {fileID: 6810353752473540703, guid: 2a979d0ede4055d45b900b1ec4e42ea9, type: 3}
+  skillEffectPrefab: {fileID: 5741546477646380478, guid: dc6e4fb7238e93b418ac583819b72e50, type: 3}
 --- !u!212 &1151045641
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8588,6 +8589,7 @@ MonoBehaviour:
   defense: 2
   attackPoint: {fileID: 41424380}
   slashEffectPrefab: {fileID: 6810353752473540703, guid: 2a979d0ede4055d45b900b1ec4e42ea9, type: 3}
+  skillEffectPrefab: {fileID: 0}
 --- !u!1 &1407954550
 GameObject:
   m_ObjectHideFlags: 0

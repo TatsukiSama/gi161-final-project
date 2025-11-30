@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96af1493e3230f4bbd51d309d00e3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 0}
+  hero: {fileID: 1248687384}
   monster: {fileID: 809277426}
   stage: 2
 --- !u!4 &145447762
@@ -838,12 +838,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626879895}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.63, y: 0.31, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -359.4084, y: -202.54501, z: 0}
   m_LocalScale: {x: 0.884587, y: 0.90151304, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 809277428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &637052536
 GameObject:
@@ -1258,10 +1258,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charName: Golem
-  maxHP: 150
+  maxHP: 100
   currentHP: 0
-  attack: 10
-  defense: 2
+  attack: 5
+  defense: 5
 --- !u!212 &809277427
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1329,7 +1329,8 @@ Transform:
   m_LocalPosition: {x: 365.0384, y: 202.85501, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 626879897}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &882240543
@@ -1368,6 +1369,7 @@ MonoBehaviour:
   defense: 2
   attackPoint: {fileID: 2110810925}
   slashEffectPrefab: {fileID: 6810353752473540703, guid: 2a979d0ede4055d45b900b1ec4e42ea9, type: 3}
+  skillEffectPrefab: {fileID: 0}
 --- !u!4 &882240545
 Transform:
   m_ObjectHideFlags: 0
@@ -2221,7 +2223,7 @@ GameObject:
   - component: {fileID: 1216204248}
   - component: {fileID: 1216204247}
   m_Layer: 0
-  m_Name: 3be2fa23-5b44-4111-83f7-03d1f923fec4_0
+  m_Name: Golem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2473,6 +2475,7 @@ MonoBehaviour:
   defense: 2
   attackPoint: {fileID: 2110810925}
   slashEffectPrefab: {fileID: 6810353752473540703, guid: 2a979d0ede4055d45b900b1ec4e42ea9, type: 3}
+  skillEffectPrefab: {fileID: 5741546477646380478, guid: dc6e4fb7238e93b418ac583819b72e50, type: 3}
 --- !u!212 &1248687385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3792,5 +3795,4 @@ SceneRoots:
   - {fileID: 1248687386}
   - {fileID: 57908385}
   - {fileID: 1017874754}
-  - {fileID: 626879897}
   - {fileID: 1216204248}

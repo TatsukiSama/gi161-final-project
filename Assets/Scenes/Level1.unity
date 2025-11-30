@@ -5970,6 +5970,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &914264796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 914264797}
+  m_Layer: 5
+  m_Name: ShieldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &914264797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914264796}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -348.98, y: -204.1, z: -2.4267588}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1151045642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &923577298
 GameObject:
   m_ObjectHideFlags: 0
@@ -7068,8 +7099,10 @@ MonoBehaviour:
   attack: 10
   defense: 2
   attackPoint: {fileID: 41424380}
+  shieldPoint: {fileID: 914264797}
   slashEffectPrefab: {fileID: 6810353752473540703, guid: 2a979d0ede4055d45b900b1ec4e42ea9, type: 3}
   skillEffectPrefab: {fileID: 5741546477646380478, guid: dc6e4fb7238e93b418ac583819b72e50, type: 3}
+  shieldEffectPrefab: {fileID: 4800735899527984945, guid: 62a521efb00adc64d807e00fe57d9c06, type: 3}
 --- !u!212 &1151045641
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7139,6 +7172,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 41424380}
+  - {fileID: 914264797}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1152885225
@@ -8588,8 +8622,10 @@ MonoBehaviour:
   attack: 10
   defense: 2
   attackPoint: {fileID: 41424380}
+  shieldPoint: {fileID: 0}
   slashEffectPrefab: {fileID: 6810353752473540703, guid: 2a979d0ede4055d45b900b1ec4e42ea9, type: 3}
   skillEffectPrefab: {fileID: 0}
+  shieldEffectPrefab: {fileID: 0}
 --- !u!1 &1407954550
 GameObject:
   m_ObjectHideFlags: 0

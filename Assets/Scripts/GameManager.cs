@@ -20,9 +20,18 @@ public class GameManager : MonoBehaviour
 
     public void PlayerTurn_Skill()
     {
-        hero.UseSkill(monster);
-        AfterPlayerAction();
+        bool success = hero.TryUseSkill(monster);
+
+        if (!success)
+        {
+            // ผู้เล่นใช้สกิลไม่ได้ → ไม่ถือว่าเสียเทิร์น และไม่ให้บอสตีฟรี
+            Debug.Log("มานาไม่พอ ใช้สกิลไม่ได้ - ผู้เล่นยังคงเป็นฝ่ายเลือกการกระทำอยู่");
+            return;
+        }
+
+        AfterPlayerAction();  // สกิลสำเร็จเท่านั้นถึงจะนับเป็นเทิร์น
     }
+
 
     public void PlayerTurn_Guard()
     {

@@ -12,6 +12,7 @@ public class Hero : Character
     {
         Debug.Log($"{charName} โจมตี {target.charName}");
         target.TakeDamage(attack);
+        AddMP(10);  // โจมตีได้มานา 10
 
         SpawnSlashEffect();
     }
@@ -20,6 +21,7 @@ public class Hero : Character
     {
         Debug.Log($"{charName} ใช้โจมตีปกติ");
         target.TakeDamage(attack);
+        AddMP(10);  // ได้มานา 10
 
         SpawnSlashEffect();
     }
@@ -28,30 +30,79 @@ public class Hero : Character
     {
         Debug.Log($"{charName} ตั้งการ์ด ลดดาเมจรอบหน้า");
         defense += 15;
+        AddMP(5);   // Guard ได้ 5 มานา
         Invoke(nameof(ResetDefense), 1f);
 
         SpawnShieldEffect();
     }
 
-    void ResetDefense()
+    private void ResetDefense()
     {
         defense -= 15;
+        if (defense < 0) defense = 0;
     }
 
+    //void ResetDefense()
+    //{
+    //    defense -= 15;
+    //}
+
     // Overloading Skill
-    public void UseSkill(Character target)
+    //public void UseSkill(Character target)
+    //{
+    //    if (!UseMP(20)) // ตรวจค่า MP
+    //    {
+    //        Debug.Log($"{charName} ใช้สกิลไม่สำเร็จ เพราะมานาไม่พอ");
+    //        return;
+    //    }
+
+    //    Debug.Log($"{charName} ใช้สกิล Slash!");
+    //    target.TakeDamage(attack + 20);
+
+    //    SpawnSkillEffect();
+    //}
+
+    //public void UseSkill(Character target, float multiplier)
+    //{
+    //    if (!UseMP(20))
+    //    {
+    //        Debug.Log($"{charName} ใช้สกิล STRIKE ไม่สำเร็จ เพราะมานาไม่พอ");
+    //        return;
+    //    }
+
+    //    int dmg = Mathf.RoundToInt(attack * multiplier);
+    //    Debug.Log($"{charName} ใช้สกิล STRIKE x{multiplier}");
+    //    target.TakeDamage(dmg);
+    //}
+
+    public bool TryUseSkill(Character target)
     {
+        if (!UseMP(20)) // ตรวจค่า MP
+        {
+            Debug.Log($"{charName} ใช้สกิลไม่สำเร็จ เพราะมานาไม่พอ");
+            return false; // บอก GameManager ว่าเทิร์นยังไม่จบ
+        }
+
         Debug.Log($"{charName} ใช้สกิล Slash!");
         target.TakeDamage(attack + 20);
 
-        SpawnSkillEffect();
+        return true;
     }
 
-    public void UseSkill(Character target, float multiplier)
+    // Overload Skill
+    public bool TryUseSkill(Character target, float multiplier)
     {
+        if (!UseMP(20))
+        {
+            Debug.Log($"{charName} ใช้สกิล STRIKE ไม่สำเร็จ เพราะมานาไม่พอ");
+            return false;
+        }
+
         int dmg = Mathf.RoundToInt(attack * multiplier);
-        Debug.Log($"{charName} ใช้สกิล STRIKE x{multiplier}");
+        Debug.Log($"{charName} ใช้ STRIKE x{multiplier}");
         target.TakeDamage(dmg);
+
+        return true;
     }
 
     public void SpawnSlashEffect()

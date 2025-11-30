@@ -9,6 +9,11 @@ public abstract class Character : MonoBehaviour
     public int attack = 10;
     public int defense = 2;
 
+    [Header("Mana")]
+    public int maxMP = 100;
+    public int currentMP = 0;
+
+
     protected virtual void Start()
     {
         currentHP = maxHP;
@@ -28,4 +33,26 @@ public abstract class Character : MonoBehaviour
             Debug.Log($"{charName} ตายแล้ว");
         }
     }
+
+    public void AddMP(int amount)
+    {
+        currentMP += amount;
+        if (currentMP > maxMP)
+            currentMP = maxMP;
+    }
+
+    public bool UseMP(int cost)
+    {
+        if (currentMP >= cost)
+        {
+            currentMP -= cost;
+            return true;
+        }
+        else
+        {
+            Debug.Log($"{charName} มีมานาไม่พอ! ({currentMP}/{maxMP})");
+            return false;
+        }
+    }
+
 }

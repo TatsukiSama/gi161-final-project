@@ -8,6 +8,8 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
+        if (target == null || bar == null) return;
+
         float ratio = (float)target.currentHP / target.maxHP;
         bar.fillAmount = ratio;
     }

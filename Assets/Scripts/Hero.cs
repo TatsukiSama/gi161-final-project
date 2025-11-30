@@ -3,8 +3,10 @@ using UnityEngine;
 public class Hero : Character
 {
     public Transform attackPoint;
+    public Transform shieldPoint;
     public GameObject slashEffectPrefab;
     public GameObject skillEffectPrefab;
+    public GameObject shieldEffectPrefab;
 
     public override void TakeTurn(Character target)
     {
@@ -27,11 +29,13 @@ public class Hero : Character
         Debug.Log($"{charName} ตั้งการ์ด ลดดาเมจรอบหน้า");
         defense += 15;
         Invoke(nameof(ResetDefense), 1f);
+
+        SpawnShieldEffect();
     }
 
     void ResetDefense()
     {
-        defense -= 5;
+        defense -= 15;
     }
 
     // Overloading Skill
@@ -68,6 +72,18 @@ public class Hero : Character
         if (skillEffectPrefab != null && attackPoint != null)
         {
             GameObject fx = Instantiate(skillEffectPrefab, attackPoint.position, Quaternion.identity);
+
+            Destroy(fx, 0.4f);
+        }
+
+
+    }
+
+    public void SpawnShieldEffect()
+    {
+        if (shieldEffectPrefab != null && shieldPoint != null)
+        {
+            GameObject fx = Instantiate(shieldEffectPrefab, shieldPoint.position, Quaternion.identity);
 
             Destroy(fx, 0.4f);
         }
